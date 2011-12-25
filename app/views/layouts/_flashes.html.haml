@@ -1,0 +1,6 @@
+.row
+  #flashes.span6.offset7
+    - flash.each do |key, value|
+      .alert-message.fade.in( class="#{key} block-message" data-alert="alert" )
+        %a.close{ :href=> "#" } ×
+        %p= value

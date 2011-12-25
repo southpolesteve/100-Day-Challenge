@@ -1,0 +1,13 @@
+!!! 5
+-ie_html :class => 'no-js', :lang => 'en' do
+  %head
+    = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
+  %body{ :class => "#{controller.controller_name} #{controller.action_name}" }
+    %header
+      = render "layouts/header"
+    .container#main{ :role => 'main' }
+      = render "layouts/flashes"
+      = yield
+      %footer
+        = render "layouts/footer"
+    = render "layouts/javascripts"

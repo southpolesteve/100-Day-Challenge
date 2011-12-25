@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/sporkd/compass-html5-boilerplate.git
+  revision: 72a79894417bbc59099f7ed002a31ebee03d514c
+  specs:
+    html5-boilerplate (2.0.0)
+      compass
+      compass-h5bp
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -34,6 +42,7 @@ GEM
     arel (3.0.0.rc1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    chunky_png (1.2.5)
     coderay (0.9.8)
     coffee-rails (3.2.0)
       coffee-script (>= 2.2.0)
@@ -42,6 +51,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    compass (0.12.alpha.3)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-h5bp (0.0.1)
+      compass
     devise (1.5.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -50,6 +65,7 @@ GEM
     erubis (2.7.0)
     execjs (1.2.13)
       multi_json (~> 1.0)
+    fssm (0.2.7)
     haml (3.1.4)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -65,6 +81,7 @@ GEM
       heroku (>= 2)
       rails (>= 2)
     hike (1.2.1)
+    hpricot (0.8.5)
     i18n (0.6.0)
     journey (1.0.0.rc3)
     jquery-rails (2.0.0)
@@ -171,10 +188,13 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.0)
+  compass (~> 0.12.alpha.1)
   devise
   haml (>= 3.0.0)
   haml-rails
   heroku_san
+  hpricot
+  html5-boilerplate!
   jquery-rails
   pg
   pry-rails

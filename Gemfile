@@ -13,7 +13,8 @@ gem 'uglifier', '>= 1.0.3'
 # Use unicorn as the web server
 # gem 'unicorn'
 
-
+gem 'html5-boilerplate', :git => 'git://github.com/sporkd/compass-html5-boilerplate.git'
+gem 'compass', "~> 0.12.alpha.1"
 gem "devise"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
@@ -22,6 +23,7 @@ gem "pry-rails"
 
 group :development do
   gem "heroku_san"
+  gem "hpricot"
 end
 
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]

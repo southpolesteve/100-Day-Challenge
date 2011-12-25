@@ -1,0 +1,21 @@
+.topbar
+  .fill
+    .container
+      %h3
+        %a.brand{:href => root_path}
+          Murfie Warehouse
+      %ul.nav
+        - if current_user
+          %li
+            = link_to "Kits", kits_path
+          %li
+            = link_to "Albums", albums_path
+          %li
+            = link_to "Discs", discs_path
+          %li
+            = link_to "Amazon Disc", '#'
+      .pull-right
+        %ul.nav
+          - if current_user
+            %li
+              = link_to "Sign Out", destroy_user_session_path, :method => 'delete'
