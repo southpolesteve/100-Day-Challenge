@@ -1,2 +1,14 @@
-%h1 Activities#index
-%p Find me in app/views/activities/index.html.haml
+%h1 Activities
+
+%table.bordered-table.zebra-striped
+  %thead
+    %th Name
+    %th Point Value
+    %th Unit
+    %th Notes
+  - @activities.each do |activity|
+    %tr
+      %td= activity.name.titleize
+      %td= activity.value
+      %td= activity.unit ? activity.unit.titleize : "Each"
+      %td= activity.notes

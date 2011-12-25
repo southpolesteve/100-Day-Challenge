@@ -4,6 +4,10 @@
       %h3
         %a.brand{:href => root_path}
           100 Day Challenge
+      %ul.nav
+        - if current_user
+          %li
+            = link_to "Activities", activities_path
       .pull-right
         %ul.nav
           - if current_user
