@@ -12,6 +12,7 @@ gem "haml-rails"
 gem "jquery-rails"
 gem "pry-rails"
 gem "devise"
+gem "simple_form"
 
 group :development do
   gem "heroku_san"
