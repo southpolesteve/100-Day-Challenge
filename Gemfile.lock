@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: 2296d25ce36d41f31b72638d9f0fdb92ffc3d513
+  specs:
+    simple_form (2.0.0.dev)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
+
+GIT
   remote: git://github.com/sporkd/compass-html5-boilerplate.git
   revision: 72a79894417bbc59099f7ed002a31ebee03d514c
   specs:
@@ -164,9 +172,6 @@ GEM
       sass (>= 3.1.10)
       tilt (~> 1.3)
     sexp_processor (3.0.9)
-    simple_form (1.5.2)
-      actionpack (~> 3.0)
-      activemodel (~> 3.0)
     slop (2.1.0)
     sprockets (2.1.2)
       hike (~> 1.2)
@@ -204,5 +209,5 @@ DEPENDENCIES
   rails (= 3.2.0.rc1)
   rspec-rails (>= 2.0.1)
   sass-rails (~> 3.2.0)
-  simple_form
+  simple_form!
   uglifier (>= 1.0.3)

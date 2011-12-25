@@ -12,7 +12,7 @@ gem "haml-rails"
 gem "jquery-rails"
 gem "pry-rails"
 gem "devise"
-gem "simple_form"
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 
 group :development do
   gem "heroku_san"
