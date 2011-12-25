@@ -1,12 +1,10 @@
 .row
-  .span5.offset6.well
+  .span6.offset7.well
     %h2 Sign up
     = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), :wrapper => 'stacked', :html => { :class => 'form-stacked'} do |f|
       = f.error_notification
-      .inputs
-        = f.input :email, :required => true, :autofocus => true
-        = f.input :password, :required => true
-        = f.input :password_confirmation, :required => true
-      .actions
-        = f.button :submit, "Sign up", :class => "primary"
+      = f.input :email, :required => true, :autofocus => true
+      = f.input :password, :required => true
+      = f.input :password_confirmation, :required => true
+      = f.button :submit, "Sign up", :class => "primary"
     = render :partial => "devise/shared/links"

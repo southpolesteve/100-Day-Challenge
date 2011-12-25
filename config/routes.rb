@@ -1,5 +1,7 @@
 Challenge::Application.routes.draw do
+  get "users/dashboard"
+
   devise_for :users
 
-  root :to => "home#index"
+  root :to => "users#dashboard"
 end

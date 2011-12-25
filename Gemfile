@@ -10,7 +10,7 @@ gem 'compass', "~> 0.12.alpha.1"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "jquery-rails"
-gem "pry-rails"
+gem "pry"
 gem "devise"
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 
