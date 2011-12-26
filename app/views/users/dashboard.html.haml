@@ -2,7 +2,10 @@
   .span10
     %h2 Recent
 
-    %h2 Record
+    %h2 New Activity
+    = simple_form_for @new_event, :wrapper => 'stacked', :html => { :class => 'form-stacked'} do |f|
+      = f.association :activity
+      = f.button :submit
 
   .span10
     %h2 Leaderboard
