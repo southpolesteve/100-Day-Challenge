@@ -1,11 +1,25 @@
 .row
   .span10
     %h2 Recent
+    - @recent_events.each do |event|
+      %p
+        #{pluralize(event.count, event.activity.name)}
 
     %h2 New Activity
     = simple_form_for @new_event, :wrapper => 'stacked', :html => { :class => 'form-stacked'} do |f|
-      = f.association :activity
-      = f.button :submit
+      = f.association :activity, :collection => Activity.all, :prompt => "Which Activity?", :label => false
+      = f.input :count, :label => "How many?"
+      = f.button :submit, :class => 'primary'
 
   .span10
     %h2 Leaderboard
+    %table.bordered-table.zebra-striped
+      %thead
+        %th Rank
+        %th User
+        %th Points
+      - @leaderboard_users.each_with_index do |user, index|
+        %tr
+          %td= index+1
+          %td= user.email
+          %td= user.total_points

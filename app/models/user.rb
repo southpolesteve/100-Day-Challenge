@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+
+  def total_points
+    events.map{ |event| event.count*event.activity.value }.sum
+  end
+
 end
