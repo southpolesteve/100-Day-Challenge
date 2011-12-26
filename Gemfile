@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.0.rc1'
+gem 'rails', '3.1.3'
 gem 'pg'
-gem 'sass-rails',   '~> 3.2.0'
-gem 'coffee-rails', '~> 3.2.0'
+gem 'sass-rails'
+gem 'coffee-rails'
 gem 'uglifier', '>= 1.0.3'
 gem 'html5-boilerplate', :git => 'git://github.com/sporkd/compass-html5-boilerplate.git'
 gem 'compass', "~> 0.12.alpha.1"
