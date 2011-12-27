@@ -4,6 +4,7 @@
     - @recent_events.each do |event|
       %p
         #{pluralize(event.count, event.activity.name)}
+        = link_to "Again!", events_path(:event => {:activity_id => event.activity_id, :count => event.count }), :method => 'post', :class => 'btn success'
 
     %h2 New Activity
     = simple_form_for @new_event, :wrapper => 'stacked', :html => { :class => 'form-stacked'} do |f|
