@@ -10,3 +10,7 @@
 body {
   padding-top: 60px;
 }
+
+.no_offset {
+  padding-left: 0px;
+}

@@ -6,11 +6,13 @@
         = link_to "Again!", events_path(:event => {:activity_id => event.activity_id, :count => event.count }), :method => 'post', :class => 'btn success'
         #{pluralize(event.count, event.activity.name)}
 
-    %h2 New Activity
-    = simple_form_for @new_event, :wrapper => 'stacked', :html => { :class => 'form-stacked'} do |f|
-      = f.association :activity, :collection => Activity.all, :prompt => "Which Activity?", :label => false
-      = f.input :count, :label => "How many?"
-      = f.button :submit, :class => 'primary'
+    .row
+      .span9.well
+        %h2 New Activity
+        = simple_form_for @new_event, :wrapper => 'stacked', :html => { :class => 'form-stacked no_offset'} do |f|
+          = f.association :activity, :collection => Activity.all, :prompt => "Which Activity?", :label => false
+          = f.input :count, :label => "How many?"
+          = f.button :submit, :class => 'primary'
 
   .span10
     %h2 Leaderboard
@@ -24,3 +26,8 @@
           %td= index+1
           %td= user.email
           %td= user.total_points
+
+    %h2 Stats
+    %p Today:
+    %p This week:
+    %p Total points: #{current_user.total_points}

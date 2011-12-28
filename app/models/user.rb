@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :activities, :through => :events
 
-  validates_presence_of :first_name, :last_name
+  validates_presence_of :first_name, :last_name, :email
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name
 
   def total_points
     events.map{ |event| event.count*event.activity.value }.sum
