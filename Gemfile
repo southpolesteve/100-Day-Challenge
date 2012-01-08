@@ -15,6 +15,7 @@ gem "devise"
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'rails_config'
 gem 'dalli'
+gem 'pry-rails'
 
 group :development do
   gem "heroku_san"
