@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   def total_points
     all_previous_days = 0
     (1..challenge_day).each do |number|
-      all_previous_days += points_for_date(Settings.start_date.to_date+(number-1).days)
+      all_previous_days += (Rails.cache.fetch('#{id}-#{number}') { points_for_date(Settings.start_date.to_date+(number-1).days) })
     end
     today = points_for_date(Date.today)
     all_previous_days+today
