@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :first_name, :last_name
 
   def total_points
-    events.map{ |event| event.count*event.activity.value }.sum
+    Activity.all.each do |activity|
+    end
   end
 
 
