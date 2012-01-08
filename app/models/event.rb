@@ -4,4 +4,5 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :user, :activity, :count
 
+
 end

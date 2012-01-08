@@ -16,4 +16,6 @@ class User < ActiveRecord::Base
     events.map{ |event| event.count*event.activity.value }.sum
   end
 
+
+
 end
