@@ -4,7 +4,8 @@
     - @recent_events.each do |event|
       %p
         = link_to "Again!", events_path(:event => {:completed_date => Date.today, :activity_id => event.activity_id, :count => event.count }), :method => 'post', :class => 'btn success'
-        #{pluralize(event.count, event.activity.name)}
+        #{pluralize(event.count, (event.activity.unit ? event.activity.unit : event.activity.name))}
+        = " #{event.activity.unit ? event.activity.name : nil}"
 
     .row
       .span9.well
@@ -25,8 +26,8 @@
       - @leaderboard_users.each_with_index do |user, index|
         %tr
           %td= index+1
-          %td= user.email
-          %td= user.total_points
+          %td= "#{user.first_name} #{user.last_name}"
+          %td= user.days.map(&:score).sum
 
     %h2 Stats
     %p Today: #{current_user.todays_points}

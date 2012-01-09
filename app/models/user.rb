@@ -6,23 +6,19 @@ class User < ActiveRecord::Base
 
   has_many :events
   has_many :activities, :through => :events
+  has_many :days
 
   validates_presence_of :first_name, :last_name, :email
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :first_name, :last_name
 
-  def total_points
-    all_previous_days = 0
-    (1..challenge_day).each do |number|
-      all_previous_days = all_previous_days + points_for_date(Settings.start_date.to_date+(number-1).days)
-    end
-    today = points_for_date(Date.today)
-    all_previous_days+today
+  def challenge_day
+    ((Time.now.utc + Time.zone_offset('CST')).to_date - Settings.start_date.to_date).to_i
   end
 
-  def challenge_day
-    (Date.today - Settings.start_date.to_date).to_i
+  def total_points
+    days.map(&:score).sum
   end
 
   def todays_points
