@@ -8,6 +8,6 @@ Challenge::Application.routes.draw do
   root :to => "users#dashboard"
 
   resources :activities, :only => [:index]
-  resources :events, :only => [:create]
+  resources :events, :only => [:create, :delete]
 
 end
