@@ -1,0 +1,6 @@
+%h1= "#{@user.first_name} #{@user.last_name}"
+%h3 Recent Activities
+- @user.events.order('created_at DESC').limit(40).each do |event|
+  %p
+    #{pluralize(event.count, (event.activity.unit ? event.activity.unit : event.activity.name))}
+    = " #{event.activity.unit ? event.activity.name : nil}"

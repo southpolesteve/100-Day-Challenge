@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    current_user.days
+    @user = User.find(params[:id])
   end
 
 end

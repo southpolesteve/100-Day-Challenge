@@ -1,6 +1,7 @@
 Challenge::Application.routes.draw do
 
   get "users/dashboard"
+  resources :users, :only => [:show]
 
   devise_for :users
 
