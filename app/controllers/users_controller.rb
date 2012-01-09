@@ -10,4 +10,8 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    current_user.days
+  end
+
 end
