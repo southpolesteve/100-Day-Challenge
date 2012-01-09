@@ -26,7 +26,7 @@
       - @leaderboard_users.each_with_index do |user, index|
         %tr
           %td= index+1
-          %td= link_to "#{user.first_name} #{user.last_name}", user
+          %td= link_to "#{user.first_name} #{user.last_name}", user_events(:id => user.id)
           %td= user.days.map(&:score).sum
 
     %h2 Stats

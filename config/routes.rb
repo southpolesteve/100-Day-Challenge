@@ -1,7 +1,7 @@
 Challenge::Application.routes.draw do
 
   get "users/dashboard"
-  get "users/events"
+  get "users/:id/events" => "users#events", :as => "user_events"
 
   devise_for :users
 
