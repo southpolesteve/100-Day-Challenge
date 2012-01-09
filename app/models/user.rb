@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 
   def daily_average
     daily_scores = days.map(&:score)
-    daily_scores.inject{ |sum, el| sum + el }.to_f / daily_scores.size
+    daily_scores.inject{ |sum, el| sum + el }.to_f / User.challenge_day
   end
 
   def points_for_date(date)
