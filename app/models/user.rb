@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :first_name, :last_name
 
-  def challenge_day
+  def self.challenge_day
     ((Time.now.utc + Time.zone_offset('CST')).to_date - Settings.start_date.to_date).to_i
   end
 

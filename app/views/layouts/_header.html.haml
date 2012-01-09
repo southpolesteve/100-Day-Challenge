@@ -4,7 +4,7 @@
       %h3
         %a.brand{:href => root_path}
           100 Day Challenge
-          (Day #{current_user.challenge_day+1})
+          (Day #{User.challenge_day+1})
       %ul.nav
         - if current_user
           %li
