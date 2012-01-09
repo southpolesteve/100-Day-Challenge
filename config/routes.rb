@@ -1,6 +1,7 @@
 Challenge::Application.routes.draw do
 
   get "users/dashboard"
+  get "users/events"
 
   devise_for :users
 
