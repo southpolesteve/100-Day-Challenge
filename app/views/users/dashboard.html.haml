@@ -1,3 +1,5 @@
+:javascript
+  var units = #{'{' + Activity.all.map{|a| a.id.to_s + ': "' + (a.unit.try(:titleize) || 'Each') + '"'}.join(', ') + '}'};
 .row
   .span10
     %h2 Recent Activities
@@ -13,6 +15,8 @@
         = simple_form_for @new_event, :wrapper => 'stacked', :html => { :class => 'form-stacked no_offset'} do |f|
           = f.association :activity, :collection => Activity.all, :prompt => "Which Activity?", :label => false
           = f.input :count, :label => "How many?"
+          %span.help-block#miles-minutes -
+          %br
           = f.input :completed_date, :label => "Date (Today is default)", :default => Time.now.in_time_zone("Central Time (US & Canada)").to_date
           = f.button :submit, :class => 'primary'
 
