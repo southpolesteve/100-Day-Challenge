@@ -23,3 +23,5 @@
 // require bootstrap-popover
 // require bootstrap-scrollspy
 // require bootstrap-tabs
+//
+//= require users.js.coffee
