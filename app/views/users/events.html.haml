@@ -4,5 +4,6 @@
   %p
     #{pluralize(event.count, (event.activity.unit ? event.activity.unit : event.activity.name))}
     = " #{event.activity.unit ? event.activity.name : nil}"
+    on #{event.completed_date.to_s}
     - if current_user == @user
       = link_to "Delete", event_path(event), :method => :delete, :confirm => "Are you sure?"
