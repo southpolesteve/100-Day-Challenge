@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def todays_points
-    points_for_date(Date.today)
+    points_for_date((Time.now.utc + Time.zone_offset('CST')).to_date)
   end
 
   def daily_average
