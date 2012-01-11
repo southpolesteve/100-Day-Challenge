@@ -2,12 +2,19 @@
   var units = #{'{' + Activity.all.map{|a| a.id.to_s + ': "' + (a.unit.try(:titleize) || 'Each') + '"'}.join(', ') + '}'};
 .row
   .span10
-    %h2 Recent Activities
-    - @recent_events.each do |event|
-      %p
-        = link_to "Again!", events_path(:event => {:completed_date => Date.today, :activity_id => event.activity_id, :count => event.count }), :method => 'post', :class => 'btn success'
-        #{pluralize(event.count, (event.activity.unit ? event.activity.unit : event.activity.name))}
-        = " #{event.activity.unit ? event.activity.name : nil}"
+    .row
+      .span5
+        %h2 Recent Activities
+        - @recent_events.each do |event|
+          %p
+            = link_to "Again!", events_path(:event => {:completed_date => Date.today, :activity_id => event.activity_id, :count => event.count }), :method => 'post', :class => 'btn success'
+            #{pluralize(event.count, (event.activity.unit ? event.activity.unit : event.activity.name))}
+            = " #{event.activity.unit ? event.activity.name : nil}"
+      .span5
+        %h2 Stats
+        %p Today: #{current_user.todays_points}
+        %p Daily Average: #{current_user.daily_average}
+        %p Total points: #{current_user.total_points}
 
     .row
       .span9.well
@@ -32,8 +39,3 @@
           %td= index+1
           %td= link_to "#{user.first_name} #{user.last_name}", user_events_path(:id => user.id)
           %td= user.days.map(&:score).sum
-
-    %h2 Stats
-    %p Today: #{current_user.todays_points}
-    %p Daily Average: #{current_user.daily_average}
-    %p Total points: #{current_user.total_points}
