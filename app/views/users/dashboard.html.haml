@@ -7,7 +7,7 @@
         %h2 Recent Activities
         - @recent_events.each do |event|
           %p
-            = link_to "Again!", events_path(:event => {:completed_date => Date.today, :activity_id => event.activity_id, :count => event.count }), :method => 'post', :class => 'btn success'
+            = link_to "Again!", events_path(:event => {:completed_date => (Time.now.utc + Time.zone_offset('CST')).to_date, :activity_id => event.activity_id, :count => event.count }), :method => 'post', :class => 'btn success'
             #{pluralize(event.count, (event.activity.unit ? event.activity.unit : event.activity.name))}
             = " #{event.activity.unit ? event.activity.name : nil}"
       .span5
